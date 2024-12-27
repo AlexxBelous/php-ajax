@@ -1,5 +1,11 @@
 <?php
+
 namespace core;
+
+use PDO;
+use PDOStatement;
+use PDOException;
+
 class Db
 {
 

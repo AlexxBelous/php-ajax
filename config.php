@@ -3,7 +3,7 @@
 return [
     'db' => [
         'host' => 'mysql',
-        'dbname' => 'world',
+        'dbname' => 'php_ajax',
         'username' => 'root',
         'password' => 'root',
         'charset' => 'utf8', // utf8mb4
