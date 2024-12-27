@@ -23,37 +23,7 @@
             </button>
         </div>
         <div class="table-responsive my-3">
-            <?php if (!empty($cities)): ?>
-                <?php echo $pagination; ?>
-                <table class="table table-hover">
-                    <thead class="table-dark">
-                    <tr>
-                        <th scope="col">ID</th>
-                        <th scope="col">Name city</th>
-                        <th scope="col">Population</th>
-                        <th scope="col">Action</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <?php foreach ($cities as $city) : ?>
-                        <tr id="city-<?php echo $city['id'] ?>">
-                            <th scope="row"><?php echo $city['id'] ?></th>
-                            <td><?php echo $city['name'] ?></td>
-                            <td><?php echo $city['population'] ?></td>
-                            <td>
-                                <button class="btn btn-info btn-edit" data-id="<?php echo $city['id'] ?>"
-                                        data-bs-toggle="modal" data-bs-target="#editCity">
-                                    Edit
-                                </button>
-                                <button class="btn btn-danger btn-edit">Delete</button>
-                            </td>
-                        </tr>
-                    <?php endforeach; ?>
-                    </tbody>
-                </table>
-            <?php else: ?>
-                <p>Cities not found...</p>
-            <?php endif; ?>
+            <?php require_once "views/index-content.php"; ?>
         </div>
     </div>
 </div>
@@ -67,12 +37,27 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                ...
+
+                <form id="addCityForm">
+
+                    <div class="mb-3">
+                        <label for="addName">City Name</label>
+                        <input type="text" class="form-control" name="" id="addName">
+                    </div>
+                    <div class="mb-3">
+                        <label for="addPopulation">Population</label>
+                        <input type="number" class="form-control" name="" id="addPopulation">
+                        <input type="hidden" name="addCity">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary" id="btn-add-submit">Save</button>
+                    </div>
+
+                </form>
+                
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
+
         </div>
     </div>
 </div>
@@ -101,5 +86,6 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+<script src="/assets/main.js"></script>
 </body>
 </html>
