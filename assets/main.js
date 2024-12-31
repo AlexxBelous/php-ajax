@@ -9,7 +9,7 @@ divTable.addEventListener('click', (e) => {
                 body: JSON.stringify({page: page})
             }).then((response) => response.text())
                 .then((data) => {
-                    document.querySelector('.table-responsive').innerHTML = data;
+                    divTable.innerHTML = data;
                 })
         }
     }
