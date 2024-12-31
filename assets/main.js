@@ -1,6 +1,6 @@
 const divTable = document.querySelector('.table-responsive');
 divTable.addEventListener('click', (e) => {
-    if (e.target.className === 'page-link') {
+    if (e.target.classList.contains('page-link')) {
         e.preventDefault();
         let page = +e.target.dataset.page;
         if (page) {
